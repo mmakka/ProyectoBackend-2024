@@ -1,0 +1,95 @@
+[
+	{
+		"id": 2,
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 3
+	},
+	{
+		"id": 3,
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 4
+	},
+	{
+		"id": 4,
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 5
+	},
+	{
+		"id": 5,
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 6
+	},
+	{
+		"id": 6,
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 7
+	},
+	{
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 8
+	},
+	{
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 9
+	},
+	{
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 10
+	},
+	{
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 11
+	},
+	{
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 12
+	},
+	{
+		"title": "Auriculares",
+		"description": "Auriculares con microfono",
+		"price": 40000,
+		"thumbnail": "sin img",
+		"stock": 25,
+		"code": 13
+	}
+]
