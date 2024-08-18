@@ -1,7 +1,8 @@
 const fs = require("fs")
 const { v4: uuidv4 } = require('uuid');
 
-class ProductManager {
+
+  class ProductManager {
     constructor(path){
         this.path = path;
     };
@@ -15,18 +16,30 @@ class ProductManager {
     }
 
     addProduct = async (product) => {
-        const { title, description, price, thumbnail, stock , category} = product;
+        const {title, description, price, thumbnail, stock , category} = product;
         if (!title || !description || !price || !stock || !category) {
         console.log("El producto no pudo crearse, debe tener todos los campos requeridos,intentelo nuevamente");
           return;
         }
-        const products = await this.getproducts();
-        product.code = uuidv4();
-        let id = 1
-        if(products.length>0){
-            id=Math.max(...products.map(d=>d.id))+1
-        }
-        products.push(product)
+        if (typeof price !== 'number' || typeof stock !== 'number') {
+            console.log("El precio y el stock deben ser números.");
+              return;
+      }
+      const products = await this.getproducts();
+      product.code = uuidv4();
+
+      let id = 1;
+      if (products.length > 0) {
+          const ids = products.map(d => Number(d.id)).filter(id => !isNaN(id));
+          console.log("IDs de productos:", ids);
+          if (ids.length > 0) {
+              id = Math.max(...ids) + 1;
+          }
+      }
+      console.log("ID calculado:", id);
+      product.id = id; 
+      
+      products.push(product);
 
         await fs.promises.writeFile(this.path, JSON.stringify(products,null,5))
         console.log(`Nuevo producto agregado`);
@@ -72,17 +85,18 @@ deleteProduct = async (id) => {
     }
  }
 
-
 }
 
 
-const productManager = new ProductManager("./src/productos.json");
+const productManager = new ProductManager("./src/data/productos.json");
+/*  title, description, price, thumbnail, stock , category   */ 
+const app = async()=>{
+/*console.log(
+await productManager.addProduct({title:" Tarjeta USB", description:"Capacidad de 32 GB",price: 220, stock: 15,category: "tecnologico"
 
-const app= async()=>{
-console.log(
-    await productManager.deleteProduct(1));
+}));*/
 }
-module.exports= {ProductManager};
+
 app();
 
 
