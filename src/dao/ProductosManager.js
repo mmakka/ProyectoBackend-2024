@@ -24,7 +24,6 @@ const fs = require("fs")
         console.log("ID calculado:", id);
         product.id = id; 
         productos.push(product)
-
         await fs.promises.writeFile(this.path, JSON.stringify(productos, null, 5))
         return product;
     }
@@ -57,7 +56,7 @@ const fs = require("fs")
         productos=productos.filter(p=>p.id!==id)   
         let cantidad1=productos.length
        
-        await fs.promises.writeFile(this.path, JSON.stringify(heroes, null, 5))
+        await fs.promises.writeFile(this.path, JSON.stringify(productos, null, 5))
 
         return cantidad0-cantidad1
     }

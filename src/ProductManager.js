@@ -1,7 +1,6 @@
 const fs = require("fs")
 const { v4: uuidv4 } = require('uuid');
 
-
   class ProductManager {
     constructor(path){
         this.path = path;
@@ -16,8 +15,8 @@ const { v4: uuidv4 } = require('uuid');
     }
 
     addProduct = async (product) => {
-        const {title, description, price, thumbnail, stock , category} = product;
-        if (!title || !description || !price || !stock || !category) {
+        const {name, description, price, thumbnail, stock , category} = product;
+        if (!name || !description || !price || !stock || !category) {
         console.log("El producto no pudo crearse, debe tener todos los campos requeridos,intentelo nuevamente");
           return;
         }

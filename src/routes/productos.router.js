@@ -15,7 +15,6 @@ router.get("/", async(req, res)=>{
     }else{
         limit=productos.length;
     }
-  
     if(skip){
         skip=Number(skip)
         if(isNaN(skip)){
@@ -24,12 +23,10 @@ router.get("/", async(req, res)=>{
     }else{
         skip=0;
     }
-  
     let resultado=productos.slice(skip, skip+limit)
     res.status(200).send(resultado)
-  })
-  
-  
+})
+
   // GET X IID FUNCIONA
   router.get("/:id", async(req, res)=>{
     let {id}=req.params
@@ -47,23 +44,20 @@ router.get("/", async(req, res)=>{
     res.send(producto);
   })
   
+
   //metodo post(CREATE)
-  
   router.post("/", async (req, res)=>{
       let {name, ...otros}= req.body 
       if(!name){
           res.setHeader('Content-Type','application/json');
           return res.status(400).json({error:`Complete el name`})
       }
-  
       let productos=await ProductosManager.getProductos()
-  
       let existe=productos.find(p=>p.name && p.name.toLowerCase() === name.toLowerCase())
       if(existe){
           res.setHeader('Content-Type','application/json');
           return res.status(400).json({error:`Ya existe un producto ${name}`})
       }
-  
       // validar todo lo que se necesite...
       try {
           let newProduct =await ProductosManager.addProduct({name, ...otros})
@@ -79,12 +73,10 @@ router.get("/", async(req, res)=>{
               }
           )
      }
-  
   });
-  
-  //metodo PUT
-  
-  
+
+
+  //PUT
   router.put("/:id", async(req, res)=>{
       let {id}=req.params
       id=Number(id)
@@ -92,7 +84,6 @@ router.get("/", async(req, res)=>{
           res.setHeader('Content-Type','application/json');
           return res.status(400).json({error:`id debe ser numerico`})
       }
-      
       let productos;
       try {
           productos=await ProductosManager.getProductos();
@@ -111,16 +102,15 @@ router.get("/", async(req, res)=>{
           res.setHeader('Content-Type','application/json');
           return res.status(400).json({error:`Producto con id ${id} not found`})
       }
-  
       let aModificar=req.body
       delete aModificar.id
   
       // validaciones
-      if(aModificar.title){
-          let existe= productos.find(p=>p.title && p.title.toLowerCase()===aModificar.title.toLowerCase() && p.id!==id)
+      if(aModificar.name){
+          let existe= productos.find(p=>p.name && p.name.toLowerCase()===aModificar.name.toLowerCase() && p.id!==id)
           if(existe){
               res.setHeader('Content-Type','application/json');
-              return res.status(400).json({error:`Ya hay otro producto llamado ${aModificar.title}`})
+              return res.status(400).json({error:`Ya hay otro producto llamado ${aModificar.name}`})
           }
       }
       try {
@@ -137,8 +127,9 @@ router.get("/", async(req, res)=>{
               }
           )
       }
-  });
-  
+});
+
+  // DELETE
   router.delete("/:id", async(req, res)=>{
       let {id}=req.params
       id=Number(id)
@@ -166,7 +157,7 @@ router.get("/", async(req, res)=>{
           )
       }
       
-  })
+  });
   
   
   
