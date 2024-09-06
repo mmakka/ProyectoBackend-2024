@@ -61,6 +61,7 @@ router.get("/", async(req, res)=>{
       // validar todo lo que se necesite...
       try {
           let newProduct =await ProductosManager.addProduct({name, ...otros})
+          req.socket.emit("newProduct", {name,...otros})//SOCKET EMIT
           res.setHeader('Content-Type','application/json');
           return res.status(200).json({newProduct});
       } catch (error) {
@@ -74,9 +75,7 @@ router.get("/", async(req, res)=>{
           )
      }
   });
-
-
-  //PUT
+  //PUt
   router.put("/:id", async(req, res)=>{
       let {id}=req.params
       id=Number(id)
@@ -128,17 +127,17 @@ router.get("/", async(req, res)=>{
           )
       }
 });
-
   // DELETE
   router.delete("/:id", async(req, res)=>{
-      let {id}=req.params
+      let{id} =req.params
       id=Number(id)
       if(isNaN(id)){
           res.setHeader('Content-Type','application/json');
           return res.status(400).json({error:`id debe ser numerico`})
       }
       try {
-          let resultado=await ProductosManager.deleteProducto(id)
+          let resultado = await ProductosManager.deleteProducto(id)
+          req.socket.emit("resultado",productId)//SOCKET
           if(resultado>0){
               res.setHeader('Content-Type','application/json');
               return res.status(200).json({payload:"producto eliminado...!!!"});

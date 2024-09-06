@@ -1,40 +1,5 @@
 [
      {
-          "id": 3,
-          "name": "Auriculares",
-          "description": "Auriculares con microfono",
-          "price": 40000,
-          "thumbnail": "sin img",
-          "stock": 25,
-          "code": 5
-     },
-     {
-          "id": 2,
-          "name": "Teclado",
-          "description": "Teclado con luz led",
-          "price": 2000,
-          "thumbnail": "sin img",
-          "stock": 25,
-          "code": 4
-     },
-     {
-          "id": 3,
-          "name": "Mouse",
-          "description": "Mouse marca Logi",
-          "price": 2000,
-          "thumbnail": "sin img",
-          "stock": 25,
-          "code": 6
-     },
-     {
-          "name": "Camara web",
-          "description": "Camara web inalambrica",
-          "price": 2000,
-          "thumbnail": "sin img",
-          "stock": 30,
-          "id": 4
-     },
-     {
           "name": "Microfono",
           "description": "Microfono inalambrico",
           "price": 2000,
@@ -59,10 +24,6 @@
           "id": 7
      },
      {
-          "name": "Impresora php",
-          "id": 8
-     },
-     {
           "name": "Impresora ",
           "id": 9
      },
@@ -73,5 +34,37 @@
      {
           "name": "Prueba12",
           "id": 11
+     },
+     {
+          "name": "Cargador",
+          "id": 12
+     },
+     {
+          "name": "Tablet samsung",
+          "id": 13
+     },
+     {
+          "name": "Tablet samsung 15'",
+          "id": 14
+     },
+     {
+          "name": "Tablet samsung 19'",
+          "id": 15
+     },
+     {
+          "name": "Tablet samsung 20'",
+          "id": 16
+     },
+     {
+          "name": "Tablet samsung 30'",
+          "id": 17
+     },
+     {
+          "name": "Tablet samsung 32'",
+          "id": 18
+     },
+     {
+          "name": "Tablet samsung 90'",
+          "id": 19
      }
 ]
