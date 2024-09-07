@@ -24,11 +24,4 @@ router.get('/realtimeproducts', async (req, res) => {
     }
 });
 
-
-
-
-
-
-
-
 module.exports={router}

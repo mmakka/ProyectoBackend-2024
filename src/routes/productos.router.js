@@ -137,7 +137,7 @@ router.get("/", async(req, res)=>{
       }
       try {
           let resultado = await ProductosManager.deleteProducto(id)
-          req.socket.emit("resultado",productId)//SOCKET
+          req.socket.emit("resultado",id)//SOCKET
           if(resultado>0){
               res.setHeader('Content-Type','application/json');
               return res.status(200).json({payload:"producto eliminado...!!!"});

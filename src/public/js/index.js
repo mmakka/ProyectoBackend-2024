@@ -6,9 +6,9 @@ const socket = io();
 
 socket.on("newProduct", product =>{
     let linuevoProduct= document.createElement("li");
+        linuevoProduct.dataset.id = product.id;
         linuevoProduct.innerHTML=`${product.name}`
         ulProducts.append(linuevoProduct);
-        linuevoProduct.dataset.id = product.id;
 });
 
 socket.on('resultado', productId => {

@@ -1,16 +1,17 @@
 <script src="/socket.io/socket.io.js"></script> 
 <script src="/js/index.js" defer></script>
 
+
 <h3>Lista de productos actualizada en tiempo real</h3>
-<hr>
-<ul id="products">
-{{#each products}}
-<li>
-    {{name}}
-</li>
-    {{/each}}
-</ul>
-</ul>
+    <hr>
+    <ul id="products">
+        {{#each products}}
+        <li data-id="{{id}}">
+            {{name}}
+        </li>
+        {{/each}}
+    </ul>
+
 
 
 
